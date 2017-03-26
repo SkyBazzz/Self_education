@@ -1,1 +1,1 @@
-# Self_education master branch
+# Self_education qa branch
