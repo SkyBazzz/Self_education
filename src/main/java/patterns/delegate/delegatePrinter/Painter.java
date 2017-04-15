@@ -1,4 +1,6 @@
-package patterns.delegate;
+package patterns.delegate.delegatePrinter;
+
+import patterns.delegate.delegators.Graphics;
 
 public class Painter {
     Graphics graphics;

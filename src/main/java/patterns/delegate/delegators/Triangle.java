@@ -1,4 +1,4 @@
-package patterns.delegate;
+package patterns.delegate.delegators;
 
 public class Triangle implements Graphics {
     @Override
