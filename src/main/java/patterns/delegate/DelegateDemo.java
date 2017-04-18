@@ -1,12 +1,12 @@
 package patterns.delegate;
 
-import patterns.delegate.delegatePrinter.Painter;
-import patterns.delegate.delegators.Circle;
-import patterns.delegate.delegators.Square;
-import patterns.delegate.delegators.Triangle;
+import patterns.delegate.preparation_data.delegate_printer.Painter;
+import patterns.delegate.preparation_data.delegators.Circle;
+import patterns.delegate.preparation_data.delegators.Square;
+import patterns.delegate.preparation_data.delegators.Triangle;
 
 /**
- * Реализован паттерн делигат *
+ * Реализован паттерн делигат
  */
 public class DelegateDemo {
     public static void main(String[] args) {

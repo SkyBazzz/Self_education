@@ -1,6 +1,6 @@
 package patterns.facade;
 
-import patterns.facade.facadeComputer.Computer;
+import patterns.facade.preparation_data.facade_computer.Computer;
 
 public class FacadeDemo {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
 package patterns.builder;
 
-import patterns.builder.builder.FordBuilder;
-import patterns.builder.builder.SubaruBuilder;
-import patterns.builder.car.Car;
-import patterns.builder.director.Director;
+import patterns.builder.preparation_data.builder.FordBuilder;
+import patterns.builder.preparation_data.builder.SubaruBuilder;
+import patterns.builder.preparation_data.car.Car;
+import patterns.builder.preparation_data.director.Director;
 
 public class BuilderDemo {
     public static void main(String[] args) {
