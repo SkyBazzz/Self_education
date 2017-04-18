@@ -1,5 +1,8 @@
 package patterns.adapter.preparation_data;
 
+/**
+ * Mp4 player.
+ */
 public class Mp4Player implements AdvancedMediaPlayer {
 
     @Override

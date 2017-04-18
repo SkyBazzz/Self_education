@@ -1,5 +1,8 @@
 package patterns.adapter.preparation_data;
 
+/**
+ * Vlc player.
+ */
 public class VlcPlayer implements AdvancedMediaPlayer{
 
     @Override
