@@ -1,7 +1,13 @@
 package patterns.adapter.preparation_data;
 
+/**
+ * The type Audio player.
+ */
 public class AudioPlayer implements MediaPlayer{
 
+    /**
+     * The Media player.
+     */
     MediaPlayer mediaPlayer;
 
     @Override
