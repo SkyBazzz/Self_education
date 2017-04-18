@@ -1,7 +1,7 @@
 package patterns.factory;
 
-import patterns.factory.watchFactory.WatchFactory;
-import patterns.factory.maker.WatchMaker;
+import patterns.factory.preparation_data.watchFactory.WatchFactory;
+import patterns.factory.preparation_data.maker.WatchMaker;
 
 public class FactoryDemo {
     public static void main(String[] args) {
