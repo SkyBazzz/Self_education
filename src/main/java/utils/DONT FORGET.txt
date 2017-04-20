@@ -1,0 +1,12 @@
+How to get data from property file:
+
+using import ru.yandex.qatools.properties.*;
+1. Add annotation @Resource.Classpath("properties file storage location")
+2. Add annotation to variable @Property("property name");
+3. In constructor
+public UrlConstants(){
+     PropertyLoader.populate(this);
+}
+
+use PropertyLoader class
+
