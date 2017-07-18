@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 public class LambdasAndStreams {
     public static void main(String[] args) throws InterruptedException {
+        //Lambdas
         /*
         function has 4 things
         1. name
@@ -22,7 +23,7 @@ public class LambdasAndStreams {
 
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        // internal iterator
+        //internal iterator
         numbers.forEach(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) {
@@ -71,6 +72,9 @@ public class LambdasAndStreams {
                 .filter(e -> e % 3 != 0)
                 .map(e -> e * 2)
                 .forEach(System.out::println);
+        //Streams
+        numbers.stream()
+                .filter(e -> e % 2 == 0);
 
     }
 }
