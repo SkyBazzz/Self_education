@@ -1,4 +1,4 @@
-package java8.collection;
+package java8.collections;
 
 public class Greet {
     public void greet(Greeting greeting) {

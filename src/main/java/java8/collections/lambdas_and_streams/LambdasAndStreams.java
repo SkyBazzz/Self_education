@@ -1,8 +1,15 @@
-package java8.collection.lambdas_and_streams;
+package java8.collections.lambdas_and_streams;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
+import static java8.collections.lambdas_and_streams.Person.createList;
 
 public class LambdasAndStreams {
     public static void main(String[] args) throws InterruptedException {
@@ -73,8 +80,40 @@ public class LambdasAndStreams {
                 .map(e -> e * 2)
                 .forEach(System.out::println);
         //Streams
+        List<Integer> doubleOfEven = new ArrayList<>();
+
         numbers.stream()
-                .filter(e -> e % 2 == 0);
+                .filter(e -> e % 2 == 0)
+                .map(e -> e * 2)
+                .forEach(doubleOfEven::add);
+
+        System.out.println(doubleOfEven); //don't do this.
+        //Collect. avoid sharing mutability
+        List<Integer> doubleOfEven2 = numbers.stream()
+                .filter(e -> e % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println(doubleOfEven2);
+
+        List<Person> persons = createList();
+
+        System.out.println(persons.get(1).getName());
+        System.out.println(persons.get(1).getGender().gender);
+        System.out.println(persons.get(1).getAge());
+
+        System.out.println(
+                persons.stream()
+                        .collect(groupingBy(Person::getName,
+                                mapping(Person::getAge, toList())))
+        );
+
+        System.out.println(
+                numbers.stream()
+                        .filter(e -> e > 3)
+                        .filter(e -> e % 2 == 1)
+                        .map(e -> e * 3)
+                        .findFirst()
+                        .get()
+        );
 
     }
 }
