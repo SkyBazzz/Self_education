@@ -1,8 +1,7 @@
-package java8.collection;
+package java8.collections;
 
 
 
-import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 import utils.Utils;
 
@@ -11,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-import static java8.collection.utils.Utils.getStringIntegerMap;
+import static java8.collections.utils.Utils.getStringIntegerMap;
 
 public class CollectionDemo {
 

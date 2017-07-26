@@ -1,11 +1,11 @@
-package java8.collection;
+package java8.collections;
 
 
 
 import java.util.*;
 
-import static java8.collection.Types.CAT;
-import static java8.collection.Types.SOBAKA;
+import static java8.collections.Types.CAT;
+import static java8.collections.Types.SOBAKA;
 
 public class JavaTutorialsDemo {
     public static void main(String[] args) {
