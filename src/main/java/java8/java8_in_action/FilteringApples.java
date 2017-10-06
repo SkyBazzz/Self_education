@@ -37,47 +37,7 @@ public class FilteringApples {
         System.out.println(apple);
 
     }
-    public static class Apple{
-        private int weight = 0;
-        private String color = "";
 
-        public Apple(int weight, String color) {
-            this.weight = weight;
-            this.color = color;
-        }
-
-        public Apple(int weight) {
-            this.weight = weight;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
-
-        public void setWeight(int weight) {
-            this.weight = weight;
-        }
-
-        public String getColor() {
-            return color;
-        }
-
-        public void setColor(String color) {
-            this.color = color;
-        }
-
-        public static boolean isGreenApple(Apple apple) {
-            return "green".equals(apple.getColor());
-        }
-
-        @Override
-        public String toString() {
-            return "Apple{" +
-                    "weight=" + weight +
-                    ", color='" + color + '\'' +
-                    '}';
-        }
-    }
 
     private static <T> Collection<T> filter(Collection<T> inventory, Predicate<T> p) {
         List<T> result = new ArrayList<>();
