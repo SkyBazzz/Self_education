@@ -17,7 +17,7 @@ public class NextRound {
                 scores[iterator] = sc.nextInt();
             }
             if (scores[kthPlace] > 0) {
-                for (int iterator = kthPlace + 1; iterator < noOfStudents && scores[kthPlace] == scores[iterator]; iterator++) {
+                for (int i = kthPlace + 1; i < noOfStudents && scores[kthPlace] == scores[i]; i++) {
                     counter++;
                 }
                 System.out.println(counter + kthPlace + 1);
