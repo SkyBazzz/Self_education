@@ -1,19 +1,28 @@
 package patterns.creational_design_patterns.abstract_factory;
 
-import patterns.creational_design_patterns.abstract_factory.preparation_data.abstract_factory.AbstractFactory;
-import patterns.creational_design_patterns.abstract_factory.preparation_data.color.Color;
-import patterns.creational_design_patterns.abstract_factory.preparation_data.factory_producer.FactoryProducer;
-import patterns.creational_design_patterns.abstract_factory.preparation_data.shape.Shape;
+import patterns.creational_design_patterns.abstract_factory.app.Application;
+import patterns.creational_design_patterns.abstract_factory.factories.GUIFactory;
+import patterns.creational_design_patterns.abstract_factory.factories.MacOSFactory;
+import patterns.creational_design_patterns.abstract_factory.factories.WindowsFactory;
 
 public class AbstractFactoryDemo {
+
+       private static Application configureApplication() {
+        Application app;
+        GUIFactory factory;
+        String osName = System.getProperty("os.name").toLowerCase();
+        if (osName.contains("mac")) {
+            factory = new MacOSFactory();
+            app = new Application(factory);
+        } else {
+            factory = new WindowsFactory();
+            app = new Application(factory);
+        }
+        return app;
+    }
+
     public static void main(String[] args) {
-        AbstractFactory abstractFactory1 = FactoryProducer.getFactory("shape");
-        Shape shape1 = abstractFactory1.getShape("circle");
-        shape1.draw();
-
-        AbstractFactory abstractFactory2 = FactoryProducer.getFactory("COLOR");
-        Color color1 = abstractFactory2.getColor("RED");
-        color1.fill();
-
+        Application app = configureApplication();
+        app.paint();
     }
 }
