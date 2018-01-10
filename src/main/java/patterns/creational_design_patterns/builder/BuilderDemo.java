@@ -1,19 +1,32 @@
 package patterns.creational_design_patterns.builder;
 
-import patterns.creational_design_patterns.builder.preparation_data.builder.FordBuilder;
-import patterns.creational_design_patterns.builder.preparation_data.builder.SubaruBuilder;
-import patterns.creational_design_patterns.builder.preparation_data.car.Car;
-import patterns.creational_design_patterns.builder.preparation_data.director.Director;
+import patterns.creational_design_patterns.builder.builders.CarBuilder;
+import patterns.creational_design_patterns.builder.builders.CarManualBuilder;
+import patterns.creational_design_patterns.builder.cars.Car;
+import patterns.creational_design_patterns.builder.cars.Manual;
+import patterns.creational_design_patterns.builder.director.Director;
 
 public class BuilderDemo {
     public static void main(String[] args) {
         Director director = new Director();
-        director.setBuilder(new SubaruBuilder());
-        Car car1 = director.buildCar();
-        System.out.println(car1);
 
-        director.setBuilder(new FordBuilder());
-        Car car2 = director.buildCar();
-        System.out.println(car2);
+        // Директор получает объект конкретного строителя от клиента
+        // (приложения). Приложение само знает какой строитель использовать,
+        // чтобы получить нужный продукт.
+        CarBuilder builder = new CarBuilder();
+        director.constructSportsCar(builder);
+
+        // Готовый продукт возвращает строитель, так как Директор чаще всего не
+        // знает и не зависит от конкретных классов строителей и продуктов.
+        Car car = builder.getResult();
+        System.out.println("Car built:\n" + car.getType());
+
+
+        CarManualBuilder manualBuilder = new CarManualBuilder();
+
+        // Директор может знать больше одного рецепта строительства.
+        director.constructSportsCar(manualBuilder);
+        Manual carManual = manualBuilder.getResult();
+        System.out.println("\nCar manual built:\n" + carManual.print());
     }
 }
