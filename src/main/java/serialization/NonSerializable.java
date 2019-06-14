@@ -1,5 +1,8 @@
 package serialization;
 
+/**
+ * This parent would not be serialized because he doesn't implement Serializable or Externalizable
+ */
 public class NonSerializable {
     private String myData = "";
 
