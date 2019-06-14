@@ -21,7 +21,7 @@ public abstract class ShapeDecorator implements Shape {
     /**
      * Drow.
      */
-    public void drow() {
+    public void draw() {
         shapeDecorator.draw();
     }
 }
