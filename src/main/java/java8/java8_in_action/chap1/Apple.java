@@ -1,4 +1,4 @@
-package java8.java8_in_action;
+package java8.java8_in_action.chap1;
 
 public class Apple {
     private Integer weight = 0;
